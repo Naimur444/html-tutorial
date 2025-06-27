@@ -1,0 +1,34 @@
+<html>
+	<head>
+		<title>Banana</title>
+	</head>
+
+	<body>
+		<h3>Select Your Favorite Fruits</h3>
+
+		<input type="checkbox" id="apple" value="Apple"> Apple<br>
+		<input type="checkbox" id="banana" value="Banana" checked> Banana<br>
+		<input type="checkbox" id="orange" value="Orange"> Orange<br>
+		<input type="checkbox" id="grapes" value="Grapes"> Grapes<br><br>
+
+		<button onclick="showFruits()">Submit</button>
+
+		<p id="result">Selected Fruits: Banana</p>
+	</body>
+	
+	<script>
+	  function showFruits() {
+		let result = "Selected Fruits: ";
+		let fruits = document.querySelectorAll('input[type="checkbox"]');
+		let selected = [];
+
+		for (let i = 0; i < fruits.length; i++) {
+		  if (fruits[i].checked) {
+			selected.push(fruits[i].value);
+		  }
+		}
+
+		document.getElementById("result").innerText = result + selected.join(", ");
+	  }
+	</script>
+</html>
